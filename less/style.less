@@ -1,0 +1,132 @@
+/* VARS */
+@color1           : rgb(216, 126, 126);
+@color2           : rgb(105, 151, 167);
+
+@import 'mixins.less';
+
+
+
+.buttilicious {
+  padding:10px 0;
+  a {
+    display: inline-block;
+    margin:0 10px 0 0;
+    width:80px;
+    height:80px;
+    .border-radius(40px);
+    .gradient(#f0f0f0, #fff);
+    text-align:center;
+    vertical-align: center;
+    .box-shadow (inset 0px 2px 6px rgba(0,0,0,0.2));
+    span {
+      width:60px;
+      height:60px;
+      .border-radius(30px);
+      .gradient(#f0f0f0, darken(#f0f0f0, 10%));
+      display: inline-block;
+      text-align:center;
+      margin-top:10px;
+      .box-shadow (0px 2px 4px rgba(0,0,0,0.7));
+      img {
+        margin-top:20px;
+        opacity: 0.6;
+      }
+    }
+    &:hover {
+      -webkit-animation: hoverButtonAnimated 0.7s 1  ease;
+      -moz-animation: hoverButtonAnimated 0.7s 1  ease;
+      -o-animation: hoverButtonAnimated 0.7s 1  ease;
+      background-color: @color2;
+      background-image: none;
+      span{
+        img {
+          opacity: 1;
+          -webkit-animation: hoverIconZoom 0.4s 1  ease;
+        -moz-animation: hoverIconZoom 0.4s 1  ease;
+        -o-animation: hoverIconZoom 0.4s 1  ease;
+        }
+      }
+    }
+
+    &.disabled {
+      .gradient(#bbb, #aaa);
+      span {
+        img {
+          opacity: 0.4;
+        }
+      }
+      &:hover {
+        .gradient(#aaa, #999);
+      }
+    }
+
+    @-webkit-keyframes hoverButtonAnimated {
+      from { background-color: #f0f0f0; }
+      to { background-color: @color2; }
+    }
+    @-moz-keyframes hoverButtonAnimated {
+      from { background-color: #f0f0f0; }
+      to { background-color: @color2; }
+    }
+    @-o-keyframes hoverButtonAnimated {
+      from { background-color: #f0f0f0; }
+      to { background-color: @color2; }
+    }
+
+
+    .scale (@val) {
+      -webkit-transform: scale(@val);
+      -moz-transform: scale(@val);
+      -o-transform: scale(@val);
+      transform: scale(@val);
+      -webkit-transform-origin: center center;
+      -moz-transform-origin: center center;
+      -o-transform-origin: center center;
+      transform-origin: center center;
+    }
+
+    @-webkit-keyframes hoverIconZoom {
+      0%     { .scale(1)}
+      50%   { .scale(2)}
+      100% { .scale(1)}
+    }
+    @-moz-keyframes hoverIconZoom {
+      0%     { .scale(1)}
+      50%   { .scale(2)}
+      100% { .scale(1)}
+    }
+    @-o-keyframes hoverIconZoom {
+      0%     { .scale(1)}
+      50%   { .scale(2)}
+      100% { .scale(1)}
+    }
+
+    &.active {
+      background-color: @color1;
+      background-image: none;
+      &:hover {
+        -webkit-animation: hoverActiveButton 0.7s 1  ease;
+        -moz-animation: hoverActiveButton 0.7s 1  ease;
+        -o-animation: hoverActiveButton 0.7s 1  ease;
+        background-color: @color1;
+        span{
+          img {
+            opacity: 1;
+          }
+        }
+      }
+      @-webkit-keyframes hoverActiveButton {
+        from { background-color: @color1; }
+        to { background-color: darken(@color1, 10%); }
+      }
+      @-moz-keyframes hoverActiveButton {
+        from { background-color: @color1; }
+        to { background-color: darken(@color1, 10%); }
+      }
+      @-o-keyframes hoverActiveButton {
+        from { background-color: @color1; }
+        to { background-color: darken(@color1, 10%); }
+      }
+    }
+  }
+}
