@@ -6,18 +6,27 @@ Delicious buttons made by [Faz](http://twitter.com/_faz).
 Javascript free !
 
 
-Quick start
+HTML
 -----------
 
-Clone the repo, `git clone git://github.com/twitter/bootstrap.git`, or [download the latest release](https://github.com/twitter/bootstrap/zipball/master).
+/* 1st state */
+<a class="active" href="[HREF]" target="_blank">
+  <span><img src="[ICON IMAGE]" title="[TITLE]"></span>
+</a>
 
+/* 2nd state */
+<a class="inactive" href="[HREF]" target="_blank">
+  <span><img src="[ICON IMAGE]" title="[TITLE]"></span>
+</a>
+
+[Live demo](https://fabienzibi.com/Buttilicious)
 
 Bug tracker
 -----------
 
 Have a bug? Please create an issue here on GitHub! 
 
-https://github.com/twitter/bootstrap/issues
+https://github.com/dahfazz/Buttilicious/issues
 
 
 
